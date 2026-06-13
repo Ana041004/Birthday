@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday</title>
+
+<style>
+body{
+    background:black;
+    color:#00ff00;
+    font-family:monospace;
+    padding:30px;
+    text-align:center;
+}
+
+#typing{
+    font-size:24px;
+    white-space:pre-line;
+}
+
+img{
+    width:300px;
+    border-radius:20px;
+    margin-top:20px;
+    display:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="typing"></div>
+
+<img id="foto" src="foto1.jpg">
+
+<script>
+
+const text =
+`> Initializing...
+> Access Granted...
+> Searching Special Person...
+> Found ❤️
+> Happy Birthday!`;
+
+let i = 0;
+const typing = document.getElementById("typing");
+
+function type(){
+    if(i < text.length){
+        typing.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type,50);
+    }else{
+        document.getElementById("foto").style.display="block";
+    }
+}
+
+type();
+
+</script>
+
+</body>
+</html>
