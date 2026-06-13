@@ -1,61 +1,166 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday</title>
+<meta charset="UTF-8">
+<title>Happy Birthday Aulia ❤️</title>
 
 <style>
+
 body{
-    background:black;
-    color:#00ff00;
-    font-family:monospace;
-    padding:30px;
-    text-align:center;
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(to bottom,#001f4d,#003b8e,#0b6cff);
+color:white;
+text-align:center;
 }
 
-#typing{
-    font-size:24px;
-    white-space:pre-line;
+.header{
+padding:50px;
 }
 
-img{
-    width:300px;
-    border-radius:20px;
-    margin-top:20px;
-    display:none;
+h1{
+font-size:50px;
 }
+
+.typing{
+font-family:monospace;
+color:#7fd3ff;
+font-size:22px;
+margin:20px;
+}
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+padding:20px;
+}
+
+.gallery img{
+width:300px;
+border-radius:20px;
+box-shadow:0 0 20px #6cc6ff;
+}
+
+.card{
+width:80%;
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+margin-top:30px;
+backdrop-filter:blur(10px);
+}
+
+.heart{
+font-size:40px;
+animation:beat 1s infinite;
+}
+
+@keyframes beat{
+50%{transform:scale(1.2);}
+}
+
+.footer{
+padding:50px;
+font-size:25px;
+}
+
 </style>
-
 </head>
 
 <body>
 
-<div id="typing"></div>
+<div class="header">
 
-<img id="foto" src="foto1.jpg">
+<div class="typing" id="typing"></div>
+
+<h1>🎂 Happy Birthday 🎂</h1>
+
+<h2>Aulia Tri Ardian</h2>
+
+<h3>19 Juni 2000</h3>
+
+<div class="heart">💙</div>
+
+</div>
+
+<div class="gallery">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+
+</div>
+
+<div class="card">
+
+<h2>Untuk Aulia 💙</h2>
+
+<p>
+Terima kasih sudah hadir dalam hidupku.
+Di hari ulang tahunmu ini, aku hanya ingin mengucapkan betapa bersyukurnya aku dipertemukan dengan seseorang sebaik, setulus, dan sehangat dirimu.
+</p>
+
+<p>
+Semoga semua impianmu perlahan terwujud,
+semoga kesehatan, kebahagiaan, dan kesuksesan selalu menyertaimu.
+</p>
+
+<p>
+Aku bersyukur bisa menjadi bagian kecil dari perjalanan hidupmu.
+Terima kasih sudah menjadi tempat pulang, tempat bercerita, dan alasan untuk tersenyum setiap hari.
+</p>
+
+<p>
+Aku akan selalu mendukungmu dalam setiap langkah yang kamu ambil.
+Semoga tahun ini menjadi tahun terbaikmu.
+</p>
+
+<h2>💙 I Love You 💙</h2>
+
+<p>
+Dengan penuh cinta,
+<br><br>
+<b>Ayu Puspita</b>
+<br>
+(Pacarmu yang selalu sayang kamu)
+</p>
+
+</div>
+
+<div class="footer">
+🐻🌙✨💙🎂
+</div>
 
 <script>
 
 const text =
-`> Initializing...
-> Access Granted...
+`> Initializing Birthday Surprise...
+
 > Searching Special Person...
-> Found ❤️
-> Happy Birthday!`;
 
-let i = 0;
-const typing = document.getElementById("typing");
+> Found: Aulia Tri Ardian 💙
 
-function type(){
-    if(i < text.length){
-        typing.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type,50);
-    }else{
-        document.getElementById("foto").style.display="block";
-    }
+> Loading Memories...
+
+> 100% Complete`;
+
+let i=0;
+let typing=document.getElementById("typing");
+
+function ketik(){
+if(i<text.length){
+typing.innerHTML+=text.charAt(i);
+i++;
+setTimeout(ketik,40);
+}
 }
 
-type();
+ketik();
 
 </script>
 
