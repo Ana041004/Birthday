@@ -1,72 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Aulia ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Aulia 💙</title>
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(to bottom,#001f4d,#003b8e,#0b6cff);
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+overflow-x:hidden;
+background:linear-gradient(180deg,#001b44,#003b8e,#0f6fff);
 color:white;
 text-align:center;
+min-height:100vh;
 }
 
-.header{
-padding:50px;
+/* Bintang */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-2;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 60s linear infinite;
 }
 
-h1{
-font-size:50px;
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:0 1000px;}
+}
+
+/* Hati */
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:float 8s linear infinite;
+opacity:.7;
+z-index:-1;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+100%{
+transform:translateY(-120px);
+opacity:1;
+}
+}
+
+/* Terminal */
+
+.terminal{
+width:90%;
+max-width:850px;
+margin:30px auto;
+background:#000;
+border-radius:15px;
+padding:20px;
+text-align:left;
+box-shadow:0 0 25px rgba(0,255,255,.4);
 }
 
 .typing{
 font-family:monospace;
-color:#7fd3ff;
-font-size:22px;
-margin:20px;
+color:#00ff99;
+white-space:pre-line;
+font-size:18px;
 }
 
-.gallery{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
+/* Judul */
+
+.hero{
 padding:20px;
 }
 
-.gallery img{
-width:300px;
-border-radius:20px;
-box-shadow:0 0 20px #6cc6ff;
+.hero h1{
+font-size:55px;
 }
 
-.card{
-width:80%;
+.hero h2{
+font-size:28px;
+margin-top:10px;
+}
+
+/* Slider */
+
+.slider{
+width:320px;
+height:420px;
+margin:30px auto;
+position:relative;
+}
+
+.slider img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 0 25px rgba(255,255,255,.4);
+opacity:0;
+transition:1s;
+}
+
+.slider img.active{
+opacity:1;
+}
+
+/* Tombol */
+
+button{
+background:#66d9ff;
+border:none;
+padding:15px 30px;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+margin:20px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* Surat */
+
+.letter{
+display:none;
+width:90%;
 max-width:900px;
-margin:auto;
-background:rgba(255,255,255,0.1);
+margin:20px auto;
 padding:30px;
-border-radius:20px;
-margin-top:30px;
+background:rgba(255,255,255,.15);
 backdrop-filter:blur(10px);
-}
-
-.heart{
-font-size:40px;
-animation:beat 1s infinite;
-}
-
-@keyframes beat{
-50%{transform:scale(1.2);}
+border-radius:20px;
+line-height:1.8;
+font-size:18px;
 }
 
 .footer{
-padding:50px;
+padding:40px;
 font-size:25px;
+}
+
+.couple{
+font-size:80px;
+margin:20px;
 }
 
 </style>
@@ -74,93 +168,184 @@ font-size:25px;
 
 <body>
 
-<div class="header">
+<div class="stars"></div>
 
-<div class="typing" id="typing"></div>
+<div class="terminal">
+<div id="typing" class="typing"></div>
+</div>
+
+<div class="hero">
+
+<div class="couple">🐻💙🐰</div>
 
 <h1>🎂 Happy Birthday 🎂</h1>
 
 <h2>Aulia Tri Ardian</h2>
 
-<h3>19 Juni 2000</h3>
-
-<div class="heart">💙</div>
+<p>19 Juni 2000</p>
 
 </div>
 
-<div class="gallery">
-
-<img src="foto1.jpg">
-<img src="foto2.jpg">
-<img src="foto3.jpg">
-
+<div class="slider">
+<img src="foto01.jpg" class="active">
+<img src="foto02.jpg">
+<img src="foto03.jpg">
 </div>
 
-<div class="card">
+<button onclick="openLetter()">
+💌 Open Secret Letter
+</button>
 
-<h2>Untuk Aulia 💙</h2>
+<div class="letter" id="letter">
 
-<p>
-Terima kasih sudah hadir dalam hidupku.
-Di hari ulang tahunmu ini, aku hanya ingin mengucapkan betapa bersyukurnya aku dipertemukan dengan seseorang sebaik, setulus, dan sehangat dirimu.
-</p>
+<h2>Untuk Aulia Tri Ardian 💙</h2>
 
-<p>
-Semoga semua impianmu perlahan terwujud,
-semoga kesehatan, kebahagiaan, dan kesuksesan selalu menyertaimu.
-</p>
-
-<p>
-Aku bersyukur bisa menjadi bagian kecil dari perjalanan hidupmu.
-Terima kasih sudah menjadi tempat pulang, tempat bercerita, dan alasan untuk tersenyum setiap hari.
-</p>
-
-<p>
-Aku akan selalu mendukungmu dalam setiap langkah yang kamu ambil.
-Semoga tahun ini menjadi tahun terbaikmu.
-</p>
-
-<h2>💙 I Love You 💙</h2>
-
-<p>
-Dengan penuh cinta,
-<br><br>
-<b>Ayu Puspita</b>
 <br>
-(Pacarmu yang selalu sayang kamu)
+
+<p>
+Selamat ulang tahun, sayangku.
+Di hari spesialmu ini, aku ingin mengucapkan terima kasih karena telah hadir dalam hidupku.
 </p>
+
+<br>
+
+<p>
+Aku bersyukur dipertemukan dengan seseorang yang selalu membuat hariku terasa lebih berarti.
+Terima kasih untuk setiap perhatian, dukungan, tawa, cerita, dan kenangan yang telah kita lalui bersama.
+</p>
+
+<br>
+
+<p>
+Semoga di usia yang baru ini kamu selalu diberikan kesehatan, kebahagiaan, kelancaran rezeki, dan kekuatan untuk meraih semua impianmu.
+Aku percaya kamu akan menjadi pribadi yang semakin hebat dari hari ke hari.
+</p>
+
+<br>
+
+<p>
+Tidak ada hadiah yang bisa menggambarkan betapa berharganya dirimu bagiku.
+Aku hanya ingin kamu tahu bahwa aku selalu bangga memilikimu dan akan selalu mendukungmu dalam setiap langkah yang kamu ambil.
+</p>
+
+<br>
+
+<p>
+Terima kasih sudah menjadi rumah yang nyaman, tempat berbagi cerita, dan alasan aku tersenyum setiap hari.
+</p>
+
+<br>
+
+<h3>
+Aku sayang kamu hari ini,
+besok,
+dan seterusnya. 💙
+</h3>
+
+<br>
+
+<h2>
+Dengan cinta,
+<br><br>
+Ayu Puspita 🌙✨
+</h2>
 
 </div>
 
 <div class="footer">
-🐻🌙✨💙🎂
+
+💙 🌙 ✨ 🧸 🎂 💙
+
 </div>
 
 <script>
 
+/* Efek Terminal */
+
 const text =
 `> Initializing Birthday Surprise...
 
-> Searching Special Person...
+> Connecting to Heart Database...
+
+> Searching...
 
 > Found: Aulia Tri Ardian 💙
 
 > Loading Memories...
 
-> 100% Complete`;
+> Loading Happiness...
 
-let i=0;
-let typing=document.getElementById("typing");
+> Loading Love...
 
-function ketik(){
-if(i<text.length){
-typing.innerHTML+=text.charAt(i);
+> 100% Complete
+
+> Happy Birthday Aulia ❤️`;
+
+let i = 0;
+const typing = document.getElementById("typing");
+
+function typeEffect(){
+if(i < text.length){
+typing.innerHTML += text.charAt(i);
 i++;
-setTimeout(ketik,40);
+setTimeout(typeEffect,40);
 }
+}
+typeEffect();
+
+/* Slider */
+
+let slide = 0;
+const slides = document.querySelectorAll(".slider img");
+
+setInterval(() => {
+
+slides[slide].classList.remove("active");
+
+slide++;
+
+if(slide >= slides.length){
+slide = 0;
 }
 
-ketik();
+slides[slide].classList.add("active");
+
+},3000);
+
+/* Surat */
+
+function openLetter(){
+document.getElementById("letter").style.display="block";
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+}
+
+/* Hati */
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="💙";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=
+(Math.random()*25+15)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(createHeart,500);
 
 </script>
 
